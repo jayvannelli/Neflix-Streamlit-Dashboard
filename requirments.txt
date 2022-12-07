@@ -1,4 +1,4 @@
-pandas
-streamlit
 streamlit-extras
+streamlit
+pandas
 st-vizzu
