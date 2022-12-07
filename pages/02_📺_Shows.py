@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-from streamlit_extras.altex import bar_chart
-
 
 @st.experimental_memo
 def fetch_and_clean_shows_data():
@@ -19,24 +17,6 @@ def main():
     )
 
     with best_shows_tab:
-        bar_chart(
-            data=best_shows,
-            x='MAIN_PRODUCTION',
-            y='SCORE',
-        )
-
-        bar_chart(
-            data=best_shows,
-            x='RELEASE_YEAR',
-            y='count(TITLE)',
-        )
-
-        bar_chart(
-            data=best_shows,
-            x='RELEASE_YEAR',
-            y='count(TITLE)',
-            color="MAIN_GENRE",
-        )
         st.write(best_shows)
 
     with best_shows_by_year_tab:

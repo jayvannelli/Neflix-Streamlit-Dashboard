@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-from streamlit_extras.dataframe_explorer import dataframe_explorer
-
 
 @st.experimental_memo
 def fetch_and_clean_movies_data():
@@ -19,9 +17,7 @@ def main():
     )
 
     with best_movies_tab:
-        filtered_best_movies = dataframe_explorer(best_movies)
-
-        st.dataframe(filtered_best_movies, use_container_width=True)
+        st.write(best_movies)
 
     with best_movies_by_year_tab:
         st.write(best_movies_by_year)

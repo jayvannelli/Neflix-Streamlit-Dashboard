@@ -1,4 +1,3 @@
-streamlit-extras
 streamlit
 pandas
-st-vizzu
+plost
