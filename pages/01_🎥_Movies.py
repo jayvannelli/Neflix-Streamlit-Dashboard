@@ -12,9 +12,16 @@ def fetch_and_clean_movies_data():
 def main():
     best_movies_by_year, best_movies = fetch_and_clean_movies_data()
 
-    st.write(best_movies_by_year, best_movies)
+    best_movies_tab, best_movies_by_year_tab  = st.tabs(
+        ["Best Movies", "Best Movies (By Year)"]
+    )
+
+    with best_movies_by_year_tab:
+        st.write(best_movies_by_year)
+
+    with best_movies_tab:
+        st.write(best_movies)
 
 
 if __name__ == "__main__":
     main()
-

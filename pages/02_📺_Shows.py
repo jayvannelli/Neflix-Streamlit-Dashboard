@@ -12,7 +12,15 @@ def fetch_and_clean_shows_data():
 def main():
     best_shows_by_year, best_shows = fetch_and_clean_shows_data()
 
-    st.write(best_shows_by_year, best_shows)
+    best_shows_tab, best_shows_by_year_tab = st.tabs(
+        ["Best Shows", "Best Shows (By Year)"]
+    )
+
+    with best_shows_by_year_tab:
+        st.write(best_shows_by_year)
+
+    with best_shows_tab:
+        st.write(best_shows)
 
 
 if __name__ == "__main__":
