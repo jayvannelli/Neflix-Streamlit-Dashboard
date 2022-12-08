@@ -11,7 +11,7 @@ https://www.kaggle.com/datasets/thedevastator/the-ultimate-netflix-tv-shows-and-
 
 ### About this dataset
 
-* Information before is directly from the kaggle dataset listing, and I recommend visiting the
+* Information below is directly from the kaggle dataset listing, and I recommend visiting the
 kaggle page directly to learn more about this dataset.
 
 

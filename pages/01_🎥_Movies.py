@@ -12,7 +12,7 @@ def fetch_and_clean_movies_data():
 def main():
     best_movies_by_year, best_movies = fetch_and_clean_movies_data()
 
-    best_movies_tab, best_movies_by_year_tab  = st.tabs(
+    best_movies_tab, best_movies_by_year_tab = st.tabs(
         ["Best Movies", "Best Movies (By Year)"]
     )
 
@@ -20,6 +20,16 @@ def main():
         st.write(best_movies)
 
     with best_movies_by_year_tab:
+
+        def analyze_data(grp):
+            return grp.mean()
+
+        d = best_movies_by_year.groupby(
+            ["MAIN_GENRE", "MAIN_PRODUCTION"], as_index=False)['SCORE']\
+            .apply(analyze_data)
+
+        st.write(d)
+
         st.write(best_movies_by_year)
 
 
