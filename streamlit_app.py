@@ -21,12 +21,11 @@ def main():
     raw_credits, raw_titles = fetch_and_clean_data()
 
     credits_tab, titles_tab = st.tabs(["Credits", "Titles"])
-    with credits_tab:
 
+    with credits_tab:
         st.write(raw_credits)
 
     with titles_tab:
-
         st.write(raw_titles)
 
         d = raw_titles.groupby("release_year", sort=False)
