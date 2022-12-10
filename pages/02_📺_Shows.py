@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from st_aggrid import AgGrid
 
 
 @st.experimental_memo
@@ -29,7 +28,7 @@ def main():
             st.write(genre_group.get_group(genre_selection))
 
     with best_shows_by_year_tab:
-        AgGrid(best_shows_by_year)
+        st.write(best_shows_by_year)
 
 
 if __name__ == "__main__":
