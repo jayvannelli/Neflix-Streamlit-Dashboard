@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-
 @st.experimental_memo
 def fetch_and_clean_movies_data():
     pull_1 = pd.read_csv("data/Best Movie by Year Netflix.csv").drop(columns='index')
@@ -16,9 +15,11 @@ def main():
         ["Best Movies", "Best Movies (By Year)"]
     )
 
+    # Tab 1 = 'Best Movies'
     with best_movies_tab:
         st.write(best_movies)
 
+    # Tab 1 = 'Best Movies (By Year)'
     with best_movies_by_year_tab:
 
         def analyze_data(grp):

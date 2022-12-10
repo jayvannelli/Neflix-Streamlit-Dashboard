@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import plost
+from st_aggrid import AgGrid
 
 
 @st.experimental_memo
@@ -17,10 +19,18 @@ def main():
     )
 
     with best_shows_tab:
-        st.write(best_shows)
+        overview_tab, genre_tab = st.tabs(["Overview", "Genre"])
+
+        with overview_tab:
+            st.write(best_shows)
+
+        with genre_tab:
+            genre_group = best_shows.groupby("MAIN_GENRE")
+            genre_selection = st.selectbox("Genre", options=best_shows['MAIN_GENRE'].unique())
+            st.write(genre_group.get_group(genre_selection))
 
     with best_shows_by_year_tab:
-        st.write(best_shows_by_year)
+        AgGrid(best_shows_by_year)
 
 
 if __name__ == "__main__":
